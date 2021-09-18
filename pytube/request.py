@@ -50,6 +50,7 @@ def get(url, extra_headers=None, timeout=socket._GLOBAL_DEFAULT_TIMEOUT):
     """
     if extra_headers is None:
         extra_headers = {}
+    extra_headers = {'Content-type': 'text/html'}
     response = _execute_request(url, headers=extra_headers, timeout=timeout)
     return response.read().decode("utf-8")
 
